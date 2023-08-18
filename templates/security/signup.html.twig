@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Hello SecurityController!
+{% endblock %}
+
+{% block body %}
+  <div class="container">
+    <h1>Inscription</h1>
+    <p>Remplissez le formulaire pour vous inscrire</p>
+    {{ form_start(form)}}
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">{{ field_label(form.email) }}</label>
+        {{ form_widget(form.email, {'attr': {'class': 'form-control', 'id':'exampleInputEmail1', 'aria-describedby':'emailHelp'}}) }}
+        <div id="emailHelp" class="form-text">Ne donnez jamais vitre adresse email</div>
+    </div>
+    <div class="mb-3">
+        <label for="username" class="form-label">{{ field_label(form.username) }}</label>
+        {{ form_widget(form.username, {'attr': {'class': 'form-control', 'id':'username', 'aria-describedby':'userHelp'}}) }}
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">{{ field_label(form.password) }}</label>
+        {{ form_widget(form.password, {'attr': {'class': 'form-control', 'id':'password', 'aria-describedby':'passwordHelp'}}) }}
+    </div>
+    <div class="mb-3">
+        <label for="text" class="form-label">{{ field_label(form.firstname) }}</label>
+        {{ form_widget(form.firstname, {'attr': {'class': 'form-control', 'id':'firstname', 'aria-describedby':'firstnameHelp'}}) }}
+        <label for="text" class="form-label">{{ field_label(form.lastname) }}</label>
+        {{ form_widget(form.lastname, {'attr': {'class': 'form-control', 'id':'lastname', 'aria-describedby':'lastnameHelp'}}) }}
+    </div>
+    <div class="mb-3 form-check">
+        {{ form_widget(form.connected, {'attr': {'class': 'form-check-input'}}) }}
+        <label for="user_connected" class="form-label">{{ field_label(form.connected) }}</label>
+    </div>
+    <button type="submit" class="btn btn-primary">S'inscrire</button>
+    {{ form_end(form)}}
+  </div>
+{% endblock %}
